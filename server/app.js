@@ -17,18 +17,30 @@ const videos = [
     duration: '4 mins',
     name: 'Time'
   },
-  {
-    id: 2,
-    poster: '/video/2/poster',
-    duration: '2 mins',
-    name: 'Day'
-  },
-  {
-    id: 3,
-    poster: '/video/3/poster',
-    duration: '2 mins',
-    name: 'Tomorrow'
-  },
+  // {
+  //   id: 2,
+  //   poster: '/video/2/poster',
+  //   duration: '2 mins',
+  //   name: 'Day'
+  // },
+  // {
+  //   id: 3,
+  //   poster: '/video/3/poster',
+  //   duration: '2 mins',
+  //   name: 'Tomorrow'
+  // },
+  // {
+  //   id: 4,
+  //   poster: '/video/4/poster',
+  //   duration: '2 mins',
+  //   name: 'Test'
+  // },
+  // {
+  //   id: 5,
+  //   poster: '/video/5/poster',
+  //   duration: '2 mins',
+  //   name: 'Test_video'
+  // },
 ];
 
 app.use(cors());
@@ -55,7 +67,7 @@ app.get('/video/:id/data', function(req, res) {
 });
 
 app.get('/video/:id', function(req, res) {
-  const path = `assets/${req.params.id}.mp4`;
+  const path = `assets/${req.params.id}.gif`;
   const stat = fs.statSync(path);
   const fileSize = stat.size;
   const range = req.headers.range;
